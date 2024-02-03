@@ -1,4 +1,4 @@
-// Function to update text content of an HTML element based on its query selector
+//  Function to update text content of an HTML element based on its query selector
 var updateText = function (query, text) {
   document.querySelector(query).textContent = text;
 };
@@ -82,7 +82,6 @@ var attack = function (executor, target, damage) {
     )
     alert(message);
   }
-
   // Update the screen after the attack
   updateScreen();
 };
@@ -100,10 +99,8 @@ var updateNames = function () {
 document.addEventListener("DOMContentLoaded", function () {
   // Select all elements with the "hero" class
   const heroes = document.querySelectorAll(".hero");
-
   // Update the displayed names of characters on the screen
   updateNames();
-
   // Add click event listeners to each hero element
   heroes.forEach(function (heroContainer, index) {
     // Event listener for hero clicks to initiate attacks when the dragon is alive
