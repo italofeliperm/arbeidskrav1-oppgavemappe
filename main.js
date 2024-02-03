@@ -42,11 +42,11 @@ var updateScreen = function () {
   // Check for game over scenarios and display appropriate alerts
   const aliveHeroes = heroesArray.filter((hero) => hero.alive);
   if (aliveHeroes.length == 0) {
-    alert("Game over! " + dragonObject.name + " has won!");
+    alert("Spillet er tapt! " + dragonObject.name + " har vunnet!");
   }
 
   if (dragonObject.alive == false) {
-    alert("Congratulations, you have won the game!");
+    alert("Gratulere, du har vunnet spillet!");
   }
 };
 
@@ -76,14 +76,13 @@ var attack = function (executor, target, damage) {
       target.alive = false;
     }
     // Display an alert with information about the attack
-    alert(
-      executor.name + " has dealt " + damage + " damage to " + target.name + "!"
-    );
+    let message = executor.name + " har gjort " + damage + " skade på " + target.name + "!"
+    if (executor == dragonObject)(
+      message = dragonObject.name + " har angrepet " + target.name
+    )
+    alert(message);
   }
-  // Check if the target is no longer alive and display an alert
-  if (target.alive == false) {
-    alert(target.name + " has been defeated!");
-  }
+
   // Update the screen after the attack
   updateScreen();
 };
