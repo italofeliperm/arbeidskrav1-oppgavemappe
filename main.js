@@ -3,6 +3,8 @@ var updateText = function (query, text) {
   document.querySelector(query).textContent = text;
 };
 
+
+
 // Function to update the health text for a character and display it in a specific HTML element
 var updateHpText = function (query, object) {
   // Concatenate current and max HP to create a health text string
@@ -11,11 +13,18 @@ var updateHpText = function (query, object) {
   updateText(query, text);
 };
 
+
+
+
+
 // Function to hide an HTML element based on its query selector
 var updateDisappear = function (query) {
   // Set the display property of the HTML element to "none" to hide it
   document.querySelector(query).style.display = "none";
 };
+
+
+
 
 // Function to update the screen with current health information and handle game over scenarios
 var updateScreen = function () {
@@ -50,6 +59,13 @@ var updateScreen = function () {
   }
 };
 
+
+
+
+
+
+
+
 // Function representing the dragon's attack on a random living hero
 var dragonAttack = function () {
   // Filter out alive heroes
@@ -64,6 +80,14 @@ var dragonAttack = function () {
     updateScreen();
   }
 };
+
+
+
+
+
+
+
+
 
 // Function to execute an attack from one character to another and update the screen
 var attack = function (executor, target, damage) {
@@ -86,6 +110,11 @@ var attack = function (executor, target, damage) {
   updateScreen();
 };
 
+
+
+
+
+
 // Function to update the displayed names of characters on the screen
 var updateNames = function () {
   // Update the names of each character on the screen using their respective query selectors
@@ -94,6 +123,11 @@ var updateNames = function () {
   updateText("#warrior-name-txt", heroesArray[2].name);
   updateText("#dragon-name-txt", dragonObject.name);
 };
+
+
+
+
+
 
 // Event listener for the document ready state to initialize the game
 document.addEventListener("DOMContentLoaded", function () {
